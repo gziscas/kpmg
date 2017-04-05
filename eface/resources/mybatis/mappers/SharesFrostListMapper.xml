@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="eface.dao.SharesFrostListMapper" >
+  <resultMap id="BaseResultMap" type="eface.model.SharesFrostList" >
+    <id column="fro_docno" property="froDocno" jdbcType="VARCHAR" />
+    <result column="fro_auth" property="froAuth" jdbcType="VARCHAR" />
+    <result column="fro_from" property="froFrom" jdbcType="VARCHAR" />
+    <result column="fro_to" property="froTo" jdbcType="VARCHAR" />
+    <result column="fro_am" property="froAm" jdbcType="VARCHAR" />
+    <result column="thaw_auth" property="thawAuth" jdbcType="VARCHAR" />
+    <result column="thaw_docno" property="thawDocno" jdbcType="VARCHAR" />
+    <result column="thaw_date" property="thawDate" jdbcType="VARCHAR" />
+    <result column="thaw_comment" property="thawComment" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from shares_frost_list
+    where fro_docno = #{froDocno,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="eface.model.SharesFrostList" >
+    insert into shares_frost_list (fro_docno, fro_auth, fro_from, 
+      fro_to, fro_am, thaw_auth, 
+      thaw_docno, thaw_date, thaw_comment
+      )
+    values (#{froDocno,jdbcType=VARCHAR}, #{froAuth,jdbcType=VARCHAR}, #{froFrom,jdbcType=VARCHAR}, 
+      #{froTo,jdbcType=VARCHAR}, #{froAm,jdbcType=VARCHAR}, #{thawAuth,jdbcType=VARCHAR}, 
+      #{thawDocno,jdbcType=VARCHAR}, #{thawDate,jdbcType=VARCHAR}, #{thawComment,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="eface.model.SharesFrostList" >
+    update shares_frost_list
+    set fro_auth = #{froAuth,jdbcType=VARCHAR},
+      fro_from = #{froFrom,jdbcType=VARCHAR},
+      fro_to = #{froTo,jdbcType=VARCHAR},
+      fro_am = #{froAm,jdbcType=VARCHAR},
+      thaw_auth = #{thawAuth,jdbcType=VARCHAR},
+      thaw_docno = #{thawDocno,jdbcType=VARCHAR},
+      thaw_date = #{thawDate,jdbcType=VARCHAR},
+      thaw_comment = #{thawComment,jdbcType=VARCHAR}
+    where fro_docno = #{froDocno,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select fro_docno, fro_auth, fro_from, fro_to, fro_am, thaw_auth, thaw_docno, thaw_date, 
+    thaw_comment
+    from shares_frost_list
+    where fro_docno = #{froDocno,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select fro_docno, fro_auth, fro_from, fro_to, fro_am, thaw_auth, thaw_docno, thaw_date, 
+    thaw_comment
+    from shares_frost_list
+  </select>
+</mapper>

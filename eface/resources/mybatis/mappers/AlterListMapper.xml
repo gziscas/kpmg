@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="eface.dao.AlterListMapper" >
+  <resultMap id="BaseResultMap" type="eface.model.AlterList" >
+    <result column="alt_date" property="altDate" jdbcType="VARCHAR" />
+    <result column="alt_item" property="altItem" jdbcType="VARCHAR" />
+    <result column="alt_be" property="altBe" jdbcType="VARCHAR" />
+    <result column="alt_af" property="altAf" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="eface.model.AlterList" >
+    insert into alter_list (alt_date, alt_item, alt_be, 
+      alt_af)
+    values (#{altDate,jdbcType=VARCHAR}, #{altItem,jdbcType=VARCHAR}, #{altBe,jdbcType=VARCHAR}, 
+      #{altAf,jdbcType=VARCHAR})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select alt_date, alt_item, alt_be, alt_af
+    from alter_list
+  </select>
+</mapper>
