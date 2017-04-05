@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="eface.dao.BasicListMapper" >
+  <resultMap id="BaseResultMap" type="eface.model.BasicList" >
+    <result column="enterprise_name" property="enterpriseName" jdbcType="VARCHAR" />
+    <result column="fr_name" property="frName" jdbcType="VARCHAR" />
+    <result column="credit_code" property="creditCode" jdbcType="VARCHAR" />
+    <result column="reg_no" property="regNo" jdbcType="VARCHAR" />
+    <result column="reg_cap" property="regCap" jdbcType="VARCHAR" />
+    <result column="reg_cap_cur" property="regCapCur" jdbcType="VARCHAR" />
+    <result column="es_date" property="esDate" jdbcType="VARCHAR" />
+    <result column="open_from" property="openFrom" jdbcType="VARCHAR" />
+    <result column="open_to" property="openTo" jdbcType="VARCHAR" />
+    <result column="enterprise_type" property="enterpriseType" jdbcType="VARCHAR" />
+    <result column="enterprise_status" property="enterpriseStatus" jdbcType="VARCHAR" />
+    <result column="cancel_date" property="cancelDate" jdbcType="VARCHAR" />
+    <result column="revoke_date" property="revokeDate" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="abultem" property="abultem" jdbcType="VARCHAR" />
+    <result column="cbultem" property="cbultem" jdbcType="VARCHAR" />
+    <result column="operate_scope" property="operateScope" jdbcType="VARCHAR" />
+    <result column="operate_scope_and_form" property="operateScopeAndForm" jdbcType="VARCHAR" />
+    <result column="reg_org" property="regOrg" jdbcType="VARCHAR" />
+    <result column="anche_year" property="ancheYear" jdbcType="VARCHAR" />
+    <result column="anche_date" property="ancheDate" jdbcType="VARCHAR" />
+    <result column="industry_phy_code" property="industryPhyCode" jdbcType="VARCHAR" />
+    <result column="industry_phy_name" property="industryPhyName" jdbcType="VARCHAR" />
+    <result column="industry_code" property="industryCode" jdbcType="VARCHAR" />
+    <result column="industry_name" property="industryName" jdbcType="VARCHAR" />
+    <result column="rec_cap" property="recCap" jdbcType="VARCHAR" />
+    <result column="ori_reg_no" property="oriRegNo" jdbcType="VARCHAR" />
+    <result column="appr_date" property="apprDate" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="eface.model.BasicList" >
+    insert into basic_list (enterprise_name, fr_name, credit_code, 
+      reg_no, reg_cap, reg_cap_cur, 
+      es_date, open_from, open_to, 
+      enterprise_type, enterprise_status, cancel_date, 
+      revoke_date, address, abultem, 
+      cbultem, operate_scope, operate_scope_and_form, 
+      reg_org, anche_year, anche_date, 
+      industry_phy_code, industry_phy_name, industry_code, 
+      industry_name, rec_cap, ori_reg_no, 
+      appr_date)
+    values (#{enterpriseName,jdbcType=VARCHAR}, #{frName,jdbcType=VARCHAR}, #{creditCode,jdbcType=VARCHAR}, 
+      #{regNo,jdbcType=VARCHAR}, #{regCap,jdbcType=VARCHAR}, #{regCapCur,jdbcType=VARCHAR}, 
+      #{esDate,jdbcType=VARCHAR}, #{openFrom,jdbcType=VARCHAR}, #{openTo,jdbcType=VARCHAR}, 
+      #{enterpriseType,jdbcType=VARCHAR}, #{enterpriseStatus,jdbcType=VARCHAR}, #{cancelDate,jdbcType=VARCHAR}, 
+      #{revokeDate,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{abultem,jdbcType=VARCHAR}, 
+      #{cbultem,jdbcType=VARCHAR}, #{operateScope,jdbcType=VARCHAR}, #{operateScopeAndForm,jdbcType=VARCHAR}, 
+      #{regOrg,jdbcType=VARCHAR}, #{ancheYear,jdbcType=VARCHAR}, #{ancheDate,jdbcType=VARCHAR}, 
+      #{industryPhyCode,jdbcType=VARCHAR}, #{industryPhyName,jdbcType=VARCHAR}, #{industryCode,jdbcType=VARCHAR}, 
+      #{industryName,jdbcType=VARCHAR}, #{recCap,jdbcType=VARCHAR}, #{oriRegNo,jdbcType=VARCHAR}, 
+      #{apprDate,jdbcType=VARCHAR})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select enterprise_name, fr_name, credit_code, reg_no, reg_cap, reg_cap_cur, es_date, 
+    open_from, open_to, enterprise_type, enterprise_status, cancel_date, revoke_date, 
+    address, abultem, cbultem, operate_scope, operate_scope_and_form, reg_org, anche_year, 
+    anche_date, industry_phy_code, industry_phy_name, industry_code, industry_name, rec_cap, 
+    ori_reg_no, appr_date
+    from basic_list
+  </select>
+</mapper>

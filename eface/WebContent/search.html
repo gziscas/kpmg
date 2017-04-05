@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>数据信息展示</title>
+<link rel="stylesheet" href="./css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="./css/common.css">
+</head>
+<body>
+<script type="text/javascript">
+function save(){
+	var name = document.getElementById("name");
+	
+	if(name==null || typeof(name) == "undefined") {
+		return false;
+	} else{
+		document.getElementById("searchForm").submit();
+	}
+}
+</script>
+<body>
+<div class="container">
+	<div class="headers" id="header">
+		<div class="width-con">
+			<div class="logo">
+				<a href="#"><img src="./images/logo.png"></a>
+			</div>
+			<div class="head-nav">
+				<a attr="index" href="index.html" >首页</a><a attr="data" class="act" href="default.html">数据市场</a><a attr="free" href="#">免费资源</a><a attr="help" href="#">帮助中心</a><a attr="aboutUs" href="about.html">关于我们</a><a attr="contact" href="contact.html">联系我们</a>
+			</div>
+			<div attr="loginText" class="head-link" style="">
+				<a class="login-link" href="#">登录</a><span>|</span><a class="register-link" href="#" style="margin-left:0;">注册</a>
+			</div>
+			<div attr="loginShow" style="display:none;color:#666;" class="head-link">
+				HI, <span attr="userName" style="color:#3b97f5;padding:0;"></span> 欢迎进入氧分子平台<a attr="userCenter" href="javascript:void(0)">用户中心</a><span class="loginOut" style="cursor:pointer;" attr="click:out">退出</span>
+			</div>
+			<!-- <div class="head-search">
+				<div class="head-search-btn" attr="click:search">
+				</div>
+				<input type="text" attr="keyword" name="search;keydown:check" value="" placeholder="">
+			</div> -->
+		</div>
+		<div id="fl_menu" class="floatShop" attr="floatShop">
+			<div class="floatPart kefu" attr="click:toKefu">
+				<img class="icon" src="./images/kefu.png"><span>在线客服</span>
+			</div>
+			<div class="floatPart" style="padding-bottom: 15px;" attr="kefu;click:toContact">
+				<span>在线</span><span>留言</span>
+			</div>
+			<div class="floatPart hide" attr="che;click:toShop">
+				<img class="icon che" src="./images/che.png"><span>购物车</span><b attr="prdNum">$prdNum$</b>
+			</div>
+		</div>
+	</div>
+
+	<div class="search_box">
+		<div class="search_info">工商数据查询</div>
+		<div class="search">
+			<form action="./outer/searchLike" name="searchForm" id="searchForm" method="post" >
+				<input class="search_input" name="name" id="name" type="text" placeholder="工商数据查询" />
+				<a href="#" class="search_btn" onclick="javascript:save();">查询</a>
+			</form>
+			
+		</div>
+	</div>
+
+	<div class="footers" id="footer">
+		<div class="width-con">
+			<div class="bottom-logo">
+				<!-- <img src="./images/pinganLogo.png"> -->
+			</div>
+			<p class="l-footers-p">
+				<span class="foot-mail"><a href="#">163@163.com</a></span><span class="foot-tel">400-000-0000</span><span class="foot-time">09:00-18:00（周一至周五）</span>
+			</p>
+			<p>
+				Copyright © 2017 好信法院通股份有限公司 版权所有
+			</p>
+			<div class="l-erweima">
+				<!-- <img src="./images/logo_bottom1.png"> -->
+			</div>
+			<a href="#" class="back-top"></a>
+		</div>
+	</div>
+</div>
+</body>
+</html>
